@@ -4,6 +4,17 @@ import { Link } from "react-router-dom";
 
 export default function Home(){
     const products = getProducts();
+    const categoriesRoutes = {
+        Accesorii : "/accesories",
+        Linii: "/lines",
+        Lansete: "/rods",
+        Carlige: "/hooks",
+        "Momeala-artificiala": "/momealaartificiala",
+        Mulinete: "/mulinete",
+        Plumbi: "/plumbi",
+    };
+    const categories = [...new Set(products.map(p => p.category))];
+
     return <div className="page">
         <div className = "home-hero">
             <h1 className = "home-title">
@@ -22,16 +33,21 @@ export default function Home(){
                             <img src={product.image} alt={product.name} className="product-card-image" />
                             <h3 className="product-card-name">{product.name}</h3>
                             <p className = "product-card-description">{product.description}</p>
-                            <span className="product-card-price">{product.price.toFixed(2)} Euro</span>
-                            <div className="product-card-actions">
-                                <Link className="btn btn-secondary">View details..</Link>
-                                <button className="btn btn-primary">Add to Cart</button>
-                            </div>
+
+
+                        {/* view details for evry category*/}
+                    <div className = "product-card-actions">
+                    <Link className="btn btn-secondary" to = {categoriesRoutes[product.category] || "/"}>
+                    View products for this {product.category}
+                    </Link>
+                    </div>
+
                         </div>
                     ))}
-
                 </div>
+
             </h2>
+
         </div>
     </div>
 }

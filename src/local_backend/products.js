@@ -28,7 +28,7 @@ const products = [
   {
     id: 3,
     name: 'Lant de plumbi mix',
-    category: 'Pline si Accesorii',
+    category: 'Plumbi',
     price: 39.9,
     description: 'Set de plumbi de diverse greutati, potrivit pentru pescuit la crap si somn.',
     image: plumbiImg,
@@ -45,8 +45,8 @@ const products = [
   },
   {
     id: 5,
-    name: 'Momeala artificiala wobler',
-    category: 'Momeala artificiala',
+    name: 'Momeala artificiala',
+    category: 'Momeala-artificiala',
     price: 54.0,
     description: 'Wobler realist pentru pescuitul rapitorilor in ape dulci si salbatice.',
     image: woblerImg,
