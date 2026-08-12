@@ -1,16 +1,32 @@
-# React + Vite
+Fishing Shop Romania – React + Vite
+This project is a simple fishing equipment shop built with React and Vite. It uses a local JavaScript file as a mock backend to store product data. 
+The application is currently frontend‑only and does not use a real backend or database.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The goal of this project is to create a small online shop interface where users can browse fishing products such as rods, reels, accessories, and storage equipment. 
+Product data is stored locally in src/local_backend/products.js, and images are imported from the src/assets directory.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+  Product listing page
+  Local mock backend using static JavaScript data
+  Image imports handled through Vite’s asset pipeline
+  React Router navigation
+  Modular component structure
+  Simple and clean UI layout
 
-## React Compiler
+Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  React 
+  Vite
+  React Router DOM
+  JavaScript
+  CSS modules
 
-## Expanding the Oxlint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Future Improvements
+    Replace local backend with a real API (Node.js, Express, or Firebase) X
+    Add a shopping cart system                                            X
+    Add product detail pages                                              X
+    Add filtering and sorting options                                     X
+    Implement user authentication                                         X
+    
