@@ -18,6 +18,8 @@ import carligJigheadImg from "../assets/carligeJighead.png";
 
 //lingurite
 import woblerImg from "../assets/wobleri.jpg";
+import castingSpoon20 from "../assets/casting-spoon2-0.jpg";
+import castingSpoo40 from "../assets/casting-spoon4-0.jpg";
 
 //linii
 import fisingLineImg from "../assets/fishingLine.jpg";
@@ -68,7 +70,7 @@ const products = [
   },
   {
     id: 5,
-    name: "Momeala artificiala",
+    name: "Momeala artificiala, pachet de mai multe lingurite",
     category: "Momeala-artificiala",
     price: 54.0,
     description:
@@ -151,6 +153,25 @@ const products = [
     description:
       "Carlige jigsaw de diverse marimi, perfecte pentru pescuitul la momeala artificiala.",
     image: carligJigheadImg,
+    inStock: true,
+  },
+  {
+    id: 14,
+    name: "Lingurita 2/0",
+    category: "Momeala-artificiala",
+    price: 15.99,
+    description:
+      "Lingurita speciala culoarea rosie pentru pescuit la spinning. Marimea 2/0",
+    image: castingSpoon20,
+    inStock: true,
+  },
+  {
+    id: 15,
+    name: "Lingurita 4/0",
+    category: "Momeala-artificiala",
+    price: 18.99,
+    description: "Lingurita speciala pentru pescuit la spinning. Marimea 4/0",
+    image: castingSpoo40,
     inStock: true,
   },
 ];
