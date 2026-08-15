@@ -6,9 +6,13 @@ import lansetaPlutaImg from "../assets/lanseta-normala-pluta.jpg.png";
 
 //mulinete
 import mulinetaImg from "../assets/mulineta-baitcasting.jpg";
+import mulinetaDaiwaImg from "../assets/mulineta-daiwa.png";
+import mulinetaColmicImg from "../assets/mulineta-colmic-9-1-rulmenti.png";
 
 //plumbi
 import plumbiImg from "../assets/lant-plumbi.jpg";
+import plumbBottomImg from "../assets/plumbi-feder-bottom.png";
+import plumbCarpImg from "../assets/plumbi-feder-carp.png";
 
 //carlige
 import carligImg from "../assets/carliguri.jpg";
@@ -172,6 +176,43 @@ const products = [
     price: 18.99,
     description: "Lingurita speciala pentru pescuit la spinning. Marimea 4/0",
     image: castingSpoo40,
+    inStock: true,
+  },
+  {
+    id: 16,
+    name: "Plumbi feeder bottom",
+    category: "Plumbi",
+    price: 25.99,
+    description:
+      "Set de plumbi pentru feeding, greutati, potrivit pentru pescuit la crap si somn.",
+    image: plumbBottomImg,
+    inStock: true,
+  },
+  {
+    id: 17,
+    name: "Plumbi pescuit carp feeder",
+    category: "Plumbi",
+    price: 35.99,
+    description: "Set de plumbi pentru pescuit la carp, cu feeder.",
+    image: plumbCarpImg,
+    inStock: true,
+  },
+  {
+    id: 18,
+    name: "Mulineta Daiwa",
+    category: "Mulinete",
+    price: 254.99,
+    description: "Mulineta Daiwa precisa pentru pescuit de competitie.",
+    image: mulinetaDaiwaImg,
+    inStock: true,
+  },
+  {
+    id: 19,
+    name: "Mulineta colmic 9 rulmenti",
+    category: "Mulinete",
+    price: 367.5,
+    description: "Mulineta Colmic, 9 rulmenti durabili.",
+    image: mulinetaColmicImg,
     inStock: true,
   },
 ];
