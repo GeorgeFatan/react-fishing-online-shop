@@ -27,9 +27,14 @@ import castingSpoo40 from "../assets/casting-spoon4-0.jpg";
 
 //linii
 import fisingLineImg from "../assets/fishingLine.jpg";
+import firMonofilament from "../assets/fir-monofilament-jaxon.png";
+import firTextil from "../assets/fir-textil-jaxon.png";
 
 //accesorii
 import accesoriiImg from "../assets/accesorii.png";
+import cutiePescuit from "../assets/cutie-pescuit.png";
+import husaPescuit from "../assets/husa-pescuit.png";
+import rucsacPescuit from "../assets/rucsac-pescuit.png";
 
 const products = [
   {
@@ -213,6 +218,52 @@ const products = [
     price: 367.5,
     description: "Mulineta Colmic, 9 rulmenti durabili.",
     image: mulinetaColmicImg,
+    inStock: true,
+  },
+  {
+    id: 20,
+    name: "Fir pescuit JAXON monofilament",
+    category: "Linii",
+    price: 54.99,
+    description: "Fir monofilament Jaxon, rezistent.",
+    image: firMonofilament,
+    inStock: true,
+  },
+  {
+    id: 21,
+    name: "Fir pescuit JAXON textil",
+    category: "Linii",
+    price: 65.99,
+    description: "Fir textil Jaxon, rezistent.",
+    image: firTextil,
+    inStock: true,
+  },
+  {
+    id: 22,
+    name: "Rucsac pescuit",
+    category: "Accesorii",
+    price: 59.99,
+    description: "Acest rucsac este perfect pentru o drumetie la pescuit.",
+    image: rucsacPescuit,
+    inStock: true,
+  },
+  {
+    id: 23,
+    name: "Husa bete pescuit",
+    category: "Accesorii",
+    price: 120.0,
+    description: "In aceasta husa poti cara maxim 5 bete de pescuit.",
+    image: husaPescuit,
+    inStock: true,
+  },
+  {
+    id: 24,
+    name: "Cutie pescuit",
+    category: "Accesorii",
+    price: 179.0,
+    description:
+      "Aceasta cutie este menita sa depoziteze accesoriile necesare unditei.",
+    image: cutiePescuit,
     inStock: true,
   },
 ];
