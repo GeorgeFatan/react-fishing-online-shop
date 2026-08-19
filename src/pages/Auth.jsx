@@ -1,10 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../context/AuthContext";
 
 export default function Auth() {
   const [mode, setMode] = useState("signup");
-  const { signUp, user, logOut, logIn } = useContext(AuthContext);
 
   const {
     register,
@@ -12,13 +10,42 @@ export default function Auth() {
     formState: { errors },
   } = useForm();
 
-  function onSubmit(data) {
-    if (mode === "sigup") {
-      signUp(data.email, data.password);
-      alert("User has signed up!");
+  async function onSubmit(data) {
+    if (mode === "signup") {
+      const res = await fetch("http://localhost:5000/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        alert("User has signed up!");
+      } else {
+        alert(result.error);
+      }
     } else {
-      logIn(data.email, data.password);
-      alert("User has loged in!");
+      const res = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        localStorage.setItem("token", result.token);
+        alert("User has logged in!");
+      } else {
+        alert(result.error);
+      }
     }
   }
 
@@ -26,16 +53,25 @@ export default function Auth() {
     <div className="page">
       <div className="container">
         <div className="auth-container">
-          {user && (
-            <p className="auth-success">
-              Logged in as <strong>{user.email}</strong>
-            </p>
+          {/* Dacă există token, afișăm mesajul de login */}
+          {localStorage.getItem("token") && (
+            <p className="auth-success">You are logged in!</p>
           )}
-          <button onClick={logOut}>Log Out</button>
+
+          {/* Log Out */}
+          <button
+            onClick={() => {
+              localStorage.removeItem("token");
+              window.location.reload();
+            }}
+          >
+            Log Out
+          </button>
 
           <h1 className="page-title">
             {mode === "signup" ? "Sign Up" : "Login"}
           </h1>
+
           <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label className="form-label" htmlFor="email">
@@ -51,6 +87,7 @@ export default function Auth() {
                 <span className="form-error">{errors.email.message}</span>
               )}
             </div>
+
             <div className="form-group">
               <label className="form-label" htmlFor="password">
                 Password
@@ -80,6 +117,7 @@ export default function Auth() {
               {mode === "signup" ? "Sign Up" : "Login"}
             </button>
           </form>
+
           <div className="auth-switch">
             {mode === "signup" ? (
               <p>
@@ -90,7 +128,7 @@ export default function Auth() {
               </p>
             ) : (
               <p>
-                Dont have an account?
+                Don't have an account?
                 <span className="auth-link" onClick={() => setMode("signup")}>
                   Sign Up
                 </span>

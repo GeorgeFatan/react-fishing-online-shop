@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import { useContext } from "react";
 
 export default function Navbar() {
-  const { user, logOut } =
-    useContext(AuthContext); /* returnam signUp, user, logOut, logIn*/
+  const token = localStorage.getItem("token");
 
   return (
     <nav className="navbar">
@@ -17,14 +14,13 @@ export default function Navbar() {
           <Link to="/" className="navbar-link">
             Home Page
           </Link>
-          <Link to="Checkout" className="navbar-link">
+          <Link to="/checkout" className="navbar-link">
             Cos
           </Link>
         </div>
 
-        {/* if user is not loged in => whe show login and register buttons*/}
-
-        {!user && (
+        {/* Dacă userul NU este logat */}
+        {!token && (
           <div className="navbar-auth">
             <div className="navbar-auth-links">
               <Link to="/auth" className="btn btn-secondary">
@@ -37,11 +33,17 @@ export default function Navbar() {
           </div>
         )}
 
-        {/* if user is loged in => we show hello, user.email*/}
-        {user && (
+        {/* Dacă userul ESTE logat */}
+        {token && (
           <div className="navbar-auth">
-            <span className="nav-user">Hello, {user.email}</span>
-            <button className="btn btn-secondary" onClick={logOut}>
+            <span className="nav-user">Hello!</span>
+            <button
+              className="btn btn-secondary"
+              onClick={() => {
+                localStorage.removeItem("token");
+                window.location.reload();
+              }}
+            >
               Log Out
             </button>
           </div>

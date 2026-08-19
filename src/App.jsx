@@ -15,29 +15,26 @@ import Hooks from "./pages/products_categories/Hooks";
 import Mulinete from "./pages/products_categories/Mulinete";
 import MomealaArtificiala from "./pages/products_categories/MomealaArtificiala";
 import Plumbi from "./pages/products_categories/Plumbi";
-import AuthProvider from "./context/AuthContext";
 // navbar
 
 function App() {
   return (
-    <AuthProvider>
-      <div className="app">
-        <Navbar />
+    <div className="app">
+      <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/accesories" element={<Accesories />} />
-          <Route path="/lines" element={<Lines />} />
-          <Route path="/rods" element={<Rods />} />
-          <Route path="/hooks" element={<Hooks />} />
-          <Route path="/mulinete" element={<Mulinete />} />
-          <Route path="/momealaartificiala" element={<MomealaArtificiala />} />
-          <Route path="/plumbi" element={<Plumbi />} />
-        </Routes>
-      </div>
-    </AuthProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/accesories" element={<Accesories />} />
+        <Route path="/lines" element={<Lines />} />
+        <Route path="/rods" element={<Rods />} />
+        <Route path="/hooks" element={<Hooks />} />
+        <Route path="/mulinete" element={<Mulinete />} />
+        <Route path="/momealaartificiala" element={<MomealaArtificiala />} />
+        <Route path="/plumbi" element={<Plumbi />} />
+      </Routes>
+    </div>
   );
 }
 
