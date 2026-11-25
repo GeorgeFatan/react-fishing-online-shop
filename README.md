@@ -1,3 +1,5 @@
+> **Status:** Archived / Completed learning project (no longer actively maintained).
+
 Fishing Shop Romania – React + Vite
 This project is a simple fishing equipment shop built with React and Vite. It uses a local JavaScript file as a mock backend to store product data. 
 .
